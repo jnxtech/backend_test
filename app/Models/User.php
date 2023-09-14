@@ -16,21 +16,21 @@ class User extends Model
 
     public function transactionsAsBuyer()
     {
-        return $this->hasMany(Transaction::class, 'buyer_id');
+        return $this->hasMany(Transaction::class, 'BuyerUID');
     }
 
     public function transactionsAsSeller()
     {
-        return $this->hasMany(Transaction::class, 'seller_id');
+        return $this->hasMany(Transaction::class, 'SellerUID');
     }
 
     public function transfersAsSender()
     {
-        return $this->hasMany(Transfer::class, 'sender_id');
+        return $this->hasMany(Transfer::class, 'SenderUserID');
     }
 
     public function transfersAsReceiver()
     {
-        return $this->hasMany(Transfer::class, 'receiver_id');
+        return $this->hasMany(Transfer::class, 'ReceiverUserID');
     }
 }
