@@ -2,21 +2,23 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
+    public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // Users should be seeded first because other tables depend on this table
+        $this->call(UserSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Cryptocurrencies can be seeded next, other tables like wallets, transactions depend on it
+        $this->call(CryptocurrencySeeder::class);
+
+        // Wallets table has foreign keys from users and cryptocurrencies, so it should be seeded next
+        $this->call(WalletSeeder::class);
+
+        // Transactions and Transfers depend on users and cryptocurrencies so they should be last
+        $this->call(TransactionSeeder::class);
+        $this->call(TransferSeeder::class);
     }
 }

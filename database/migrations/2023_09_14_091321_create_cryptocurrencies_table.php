@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id('UserID');
+        Schema::create('cryptocurrencies', function (Blueprint $table) {
+            $table->id('CryptoID');
             $table->string('Name');
-            $table->string('Email')->unique();
-            $table->string('Password');
-            $table->decimal('Balances');
+
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('cryptocurrencies');
     }
 };
