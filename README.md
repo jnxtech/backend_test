@@ -8,6 +8,14 @@
 
 4.สร้างtable ใน phpmyadmin ชื่อ  cryptotradingplatform 
 
+setค่าในenvดังนี้ 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=cryptotradingplatform
+DB_USERNAME=root
+DB_PASSWORD=
+
 5.In Terminal รันคำสั่ง  php artisan migrate:fresh --seed
 
 
