@@ -10,12 +10,12 @@ class Transfer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'sender_id',
-        'receiver_id',
-        'crypto_id',
-        'amount',
-        'date',
-        'time',
+        'SenderUserID',
+        'ReceiverUserID',
+        'CryptoID',
+        'Amount',
+        'Date',
+        'Time',
     ];
 
     /**
@@ -23,7 +23,7 @@ class Transfer extends Model
      */
     public function sender()
     {
-        return $this->belongsTo(User::class, 'sender_id');
+        return $this->belongsTo(User::class, 'SenderUserID');
     }
 
     /**
@@ -31,7 +31,7 @@ class Transfer extends Model
      */
     public function receiver()
     {
-        return $this->belongsTo(User::class, 'receiver_id');
+        return $this->belongsTo(User::class, 'ReceiverUserID');
     }
 
     /**
@@ -39,7 +39,8 @@ class Transfer extends Model
      */
     public function cryptocurrency()
     {
-        return $this->belongsTo(Cryptocurrency::class, 'crypto_id');
+        return $this->belongsTo(Cryptocurrency::class, 'CryptoID');
     }
 }
+
 

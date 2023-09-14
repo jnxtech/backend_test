@@ -10,13 +10,13 @@ class Transaction extends Model
     use HasFactory;
 
     protected $fillable = [
-        'buyer_id',
-        'seller_id',
-        'crypto_id',
-        'amount',
-        'price',
-        'date',
-        'time'
+        'BuyerUID',
+        'SellerUID',
+        'CryptoID',
+        'Amount',
+        'Price',
+        'Date',
+        'Time'
     ];
 
     /**
@@ -24,7 +24,7 @@ class Transaction extends Model
      */
     public function buyer()
     {
-        return $this->belongsTo(User::class, 'buyer_id');
+        return $this->belongsTo(User::class, 'BuyerUID');
     }
 
     /**
@@ -32,7 +32,7 @@ class Transaction extends Model
      */
     public function seller()
     {
-        return $this->belongsTo(User::class, 'seller_id');
+        return $this->belongsTo(User::class, 'SellerUID');
     }
 
     /**
@@ -40,7 +40,6 @@ class Transaction extends Model
      */
     public function cryptocurrency()
     {
-        return $this->belongsTo(Cryptocurrency::class, 'crypto_id');
+        return $this->belongsTo(Cryptocurrency::class, 'CryptoID');
     }
 }
-

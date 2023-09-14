@@ -10,9 +10,9 @@ class Wallet extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'crypto_id',
-        'balance',
+        'UserID',
+        'CryptoID',
+        'Balance',
     ];
 
     /**
@@ -20,7 +20,7 @@ class Wallet extends Model
      */
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'UserID');
     }
 
     /**
@@ -28,7 +28,7 @@ class Wallet extends Model
      */
     public function cryptocurrency()
     {
-        return $this->belongsTo(Cryptocurrency::class, 'crypto_id');
+        return $this->belongsTo(Cryptocurrency::class, 'CryptoID');
     }
 }
 

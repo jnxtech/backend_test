@@ -10,7 +10,7 @@ class Cryptocurrency extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'Name',
     ];
 
     /**
@@ -18,7 +18,7 @@ class Cryptocurrency extends Model
      */
     public function wallets()
     {
-        return $this->hasMany(Wallet::class, 'crypto_id');
+        return $this->hasMany(Wallet::class, 'CryptoID');
     }
 
     /**
@@ -26,7 +26,7 @@ class Cryptocurrency extends Model
      */
     public function transactions()
     {
-        return $this->hasMany(Transaction::class, 'crypto_id');
+        return $this->hasMany(Transaction::class, 'CryptoID');
     }
 
     /**
@@ -34,7 +34,7 @@ class Cryptocurrency extends Model
      */
     public function transfers()
     {
-        return $this->hasMany(Transfer::class, 'crypto_id');
+        return $this->hasMany(Transfer::class, 'CryptoID');
     }
 }
 
