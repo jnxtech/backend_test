@@ -1,6 +1,6 @@
 ขั้นตอนการ Run project
 
-1.Open VS Code แล้วcloneด้วยลิงค์นี้  https://github.com/freyjns/backend_test.git
+1.Open VS Code แล้วcloneด้วยลิงค์นี้  https://github.com/jnxtech/backend_test.git
 
 2.Open Terminal แล้วรันคำสั่ง  composer install
 
